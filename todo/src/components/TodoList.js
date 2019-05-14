@@ -8,29 +8,32 @@ class TodoList extends React.Component {
     constructor() {
         super();
         this.state = {
-
         }
     }
+
+    
+
     addItem = input => {
-        this.props.addTodo({name: input, completed: false})
+        this.props.addTodo({name: input, completed: false, id: this.props.counter})
+        
     }
-    
-    
 
     render() {
         return(
             <div>
                 <AddTodoForm addItem = {this.addItem}/>
-                {this.props.items.map((item, index) => <Todo item={item} index={index} />)}
+                {this.props.items.map( item => <Todo item={item}  key={item.id}/>)}
             </div>
         )
     }
     
+
 }
 
 const mapStateToProps = state => {
     return {
-        items : state.items
+        items : state.items, 
+        counter : state.counter
     }
 }
 

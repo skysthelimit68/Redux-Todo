@@ -12,18 +12,18 @@ export const addTodo = newTodo => {
     }
 }
 
-//new list with completed item excluded
-export const deleteTodo = newList => {
+//delete individual item
+export const deleteTodo =  (itemId)=> {
     return {
         type: DELETE_TODO,
-        payload: newList
+        payload: itemId
     }
 }
 
 //toggle status true or false
-export const completeTodo = status => {
+export const completeTodo = (itemId) => {
     return {
         type: COMPLETE_TODO,
-        payload: status
+        payload: itemId
     }
 }
