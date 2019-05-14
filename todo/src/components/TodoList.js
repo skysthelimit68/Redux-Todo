@@ -3,6 +3,8 @@ import Todo from "./Todo";
 import AddTodoForm from "./AddTodoForm";
 import { connect } from "react-redux";
 import { addTodo } from "../actions";
+import { Container } from 'reactstrap';
+
 
 class TodoList extends React.Component {
     constructor() {
@@ -14,15 +16,18 @@ class TodoList extends React.Component {
     
 
     addItem = input => {
-        this.props.addTodo({name: input, completed: false, id: this.props.counter})
+        if(input !== "")
+        this.props.addTodo(input)
         
     }
 
     render() {
         return(
-            <div>
+            <div className="appContainer">
                 <AddTodoForm addItem = {this.addItem}/>
-                {this.props.items.map( item => <Todo item={item}  key={item.id}/>)}
+                <Container>
+                    {this.props.items.map( item => <Todo item={item}  key={item.id}/>)}
+                </Container>
             </div>
         )
     }
