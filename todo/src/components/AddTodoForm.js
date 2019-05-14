@@ -1,4 +1,5 @@
 import React from "react";
+import { Input, Button } from 'reactstrap';
 
 
 class AddTodoForm extends React.Component {
@@ -27,14 +28,14 @@ class AddTodoForm extends React.Component {
         return(
             <div>
                 
-                    <input 
+                    <Input 
                         type="text"
                         value={this.state.todoField}
                         onChange={this.updateField}
                         placeholder="Add an item ..."
                         name="todoField"
                     />
-                    <button onClick={this.addItem}>Add Item</button>
+                    <Button color="success" onClick={this.addItem}>Add Item</Button>
                 
             </div>
         )

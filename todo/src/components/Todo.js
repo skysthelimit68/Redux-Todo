@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { completeTodo } from "../actions";
 import { deleteTodo } from "../actions";
+import {  Button } from 'reactstrap';
 
 
 const Todo = props =>  {
@@ -21,7 +22,9 @@ const Todo = props =>  {
         return(
         <div className={todoItem_style} key={props.item.id} onClick={completeToggle}>
             <p>{props.item.name}</p>
-            <button onClick={deleteTodo}>Delete</button>
+            <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         )
 }
