@@ -20,6 +20,7 @@ const Todo = props =>  {
     
     const todoItem_style = props.item.completed ? "strike-thru" : null;
     const fa_class = props.item.completed ? "far fa-check-square" : "far fa-square"
+    const close_style = props.item.completed? {color:"red"}: null;
         return (
             
                 <Row className="todoList-row">
@@ -28,25 +29,14 @@ const Todo = props =>  {
                         {props.item.name}
                     </Col>
                     <Col xs="3" className="close-btn">
-                    <button type="button" className="close" aria-label="Close" onClick={deleteTodo}>
+                    <button type="button" className="close" style={close_style} aria-label="Close" onClick={deleteTodo}>
                         <span aria-hidden="true">&times;</span>
                     </button>
                     </Col>
                 </Row>
          
         )
-    
-    
-    /*
-        return(
-        <div className={todoItem_style} key={props.item.id} onClick={completeToggle}>
-            <p>{props.item.name}</p>
-            <button type="button" class="close" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        )
-        */
+ 
 }
 
 export default connect(

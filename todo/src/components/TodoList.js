@@ -24,10 +24,12 @@ class TodoList extends React.Component {
     render() {
         return(
             <div className="appContainer">
+                <h1>Get $#!} Done</h1>
                 <AddTodoForm addItem = {this.addItem}/>
                 <Container>
                     {this.props.items.map( item => <Todo item={item}  key={item.id}/>)}
                 </Container>
+                <div className="footer">Brought to you by someone who never got her $#!} done</div>
             </div>
         )
     }

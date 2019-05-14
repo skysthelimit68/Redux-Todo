@@ -32,8 +32,13 @@
   }
 }
 
-.appContainer {
+
+.appContainer h1 {
+  background: black;
+    color: white;
+    padding: 10px;
 }
+
 
 .addTodoForm {
   margin:30px 0;
@@ -69,4 +74,13 @@
 
 .todoList-row:nth-child(odd) {
   background:#00000010;
+}
+
+.footer {
+  background: #333;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
