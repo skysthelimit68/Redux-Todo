@@ -44,6 +44,12 @@
   margin:30px 0;
 }
 
+.addTodoForm form {
+  width: 100%;
+  display: flex;
+  padding:0;
+}
+
 .strike-thru {
   text-decoration: line-through;
   color:#00000050;

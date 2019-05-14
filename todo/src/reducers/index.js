@@ -17,12 +17,6 @@ if(localStorage.length === 0 ) {
     }
 }
 
-/*
-const initialState = {
-    items : [],
-    counter : 0
-}*/
-
 export const reducer = (state = initialState, action) => {
 
     switch(action.type) {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Button, Container, Row, Col} from 'reactstrap';
+import { Input, Button, Form, Container, Row, Col} from 'reactstrap';
 
 
 class AddTodoForm extends React.Component {
@@ -28,7 +28,10 @@ class AddTodoForm extends React.Component {
         return(
             <Container className="addTodoForm">
                 <Row>
+                    
+                    <Form onSubmit={this.addItem} className="col-sm-12">
                     <Col sm="12" md="9">
+                    
                     <Input 
                         type="text"
                         value={this.state.todoField}
@@ -38,8 +41,11 @@ class AddTodoForm extends React.Component {
                     />
                     </Col>
                     <Col sm="12" md="3">
-                    <Button className="btn_fullWidth"color="success" onClick={this.addItem}>Add Item</Button>
+                    <Button className="btn_fullWidth"color="success" type="submit">Add Item</Button>
+                    
                     </Col>
+                    </Form>
+                    
                 </Row>
             </Container>
         )
